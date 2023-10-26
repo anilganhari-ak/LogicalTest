@@ -1,0 +1,26 @@
+﻿
+1. Select c.Custmerid, c.Name from Customers c where c.name like 'Joe%'
+
+2. Select  p.Name from customer c
+Join order o on  c.CustomerId = o.CustomerId
+Join OrderProduct op on o.OrderId = op.OrderId
+Join Product p on op.productId = p.Productid
+
+Where c.Name like 'Joe%' and o.CreatedAt > '2016-01-11'
+
+
+3. Select  SUM(p.Price) from customer c
+Join order o on  c.CustomerId = o.CustomerId
+Join OrderProduct op on o.OrderId = op.OrderId
+Join Product p on op.productId = p.Productid
+
+Where c.Name like 'Joe%'
+
+
+
+
+4. Select c.Name, Count(p.ProductId) from customer c
+Join order o on  c.CustomerId = o.CustomerId
+Join OrderProduct op on o.OrderId = op.OrderId
+Join Product p on op.productId = p.Productid
+Group by c.Name
